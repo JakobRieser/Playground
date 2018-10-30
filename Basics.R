@@ -62,3 +62,42 @@ m1
 
 m2 <- matrix(c(2,4,3,1,5,7), nrow=2, ncol=3, byrow=TRUE)
 m2
+
+m1[,2]
+m1[2,]
+m1[2,2]
+
+#create a vector with 80 entries based on normally distributed data
+numbers_1 <- rnorm(80, mean=0, sd=1)
+numbers_1
+
+#populatematrix with vector data in 20 rows and 4 columns:
+mat_1 <- matrix(numbers_1, nrow=20, ncol=4)
+mat_1
+
+#and convert it into a data frame:
+df_1 <- data.frame(mat_1)
+df_1
+names(df_1) <- c("var1", "var2", "var3", "var4")
+df_1
+
+head(df_1)
+summary(df_1)
+
+#gernerate a data frame with 2 colums:
+test <- data.frame(A=c(1,2,3), B=c("aB1", "aB2", "aB3"))
+test
+test[,1]
+test[,"A"]
+test$A
+
+#a list from two vectors of different size:
+a <- runif(199)
+b <- c("aa", "bb", "cc", "dd", "ee")
+c <- list(a,b)
+c
+
+#indexing a list of 2 vectors:
+c[2]
+c[[2]]
+c[[2]][1]
