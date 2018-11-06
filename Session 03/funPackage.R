@@ -16,7 +16,7 @@ someone_say_hello <- function(){
 someone_say_hello()
 
 someone_say_my_fortune <- function(){
-  animal <- animal <- sample(names(animals),1)
+  animal <- sample(names(animals),1)
   say(paste(fortune(), collapse = "\n"), by=animal)
   }
 someone_say_my_fortune()
