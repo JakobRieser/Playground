@@ -34,3 +34,4 @@ as.character(x2)
 #want to recode it?
 library(car)
 recode(x2, "'yes'='sure';'no'='maybe'")
+
