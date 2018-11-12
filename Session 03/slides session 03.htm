@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="de" xml:lang="de">
+<head>
+    <title>WS18_EAGLE_MB2: day4 main</title>
+    <link rel="shortcut icon" href="//wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1/theme_fordson/favicon/1540830881/favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, WS18_EAGLE_MB2: day4 main" />
+<link rel="stylesheet" type="text/css" href="https://wuecampus2.uni-wuerzburg.de/moodle/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://wuecampus2.uni-wuerzburg.de/moodle/theme/styles.php/fordson/1540830881_1540652139/all" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle","sesskey":"6BAFDSLHB4","themerev":"1540830881","slasharguments":1,"theme":"fordson","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1540652057","admin":"admin","svgicons":true,"usertimezone":"Europa\/Berlin","contextid":1536941};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/theme\/yui_combo.php?m\/1540652057\/","combine":true,"comboBase":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/theme\/yui_combo.php?","ext":false,"root":"m\/1540652057\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader","moodle-core-event"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_ddimageortext-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-qtype_ddimageortext-form":{"requires":["moodle-qtype_ddimageortext-dd","form_filepicker"]},"moodle-qtype_ddmarker-dd":{"requires":["node","event-resize","dd","dd-drop","dd-constrain","graphics"]},"moodle-qtype_ddmarker-form":{"requires":["moodle-qtype_ddmarker-dd","form_filepicker","graphics","escape"]},"moodle-qtype_ddwtos-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-qtype_stack-input":{"requires":["node","event-valuechange","moodle-core-event","io","json-parse"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_ratingallocate-strategyselect":{"requires":["node","event-valuechange"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bsgrid-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_htmlplus-beautify":{},"moodle-atto_htmlplus-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_htmlplus-beautify","moodle-atto_htmlplus-codemirror","event-valuechange"]},"moodle-atto_htmlplus-codemirror":{"requires":["moodle-atto_htmlplus-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1540652057\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/lib\/javascript.php\/1540652057\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/lib\/javascript.php\/1540652057\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/wuecampus2.uni-wuerzburg.de\/moodle\/lib\/MathJax\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    MMLorHTML: { prefer: "HTML" },
+    "HTML-CSS": {
+               scale: "120",
+               webFont: "STIX-Web"
+                           },
+    tex2jax: {
+        displayMath: [['\\[', '\\]']],
+        inlineMath:  [['\\(', '\\)']],
+        processEscapes: true
+    },
+    TeX: { extensions: ['enclose.js'] }
+});
+</script>
+<script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/lib/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body  id="page-mod-resource-view" class="format-weeks  path-mod path-mod-resource safari dir-ltr lang-de yui-skin-sam yui3-skin-sam wuecampus2-uni-wuerzburg-de--moodle pagelayout-incourse course-30176 context-1536941 cmid-1021893 category-19024 ">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Zum Hauptinhalt</a>
+</div><script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/theme/jquery.php/core/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/lib/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="fixed-top navbar navbar-light navbar-expand moodle-has-zindex">
+            <a href="https://wuecampus2.uni-wuerzburg.de/moodle" class="navbar-brand 
+                    d-none d-sm-inline
+                    ">
+                <span class="site-name d-none d-md-inline">WueCampus2</span>
+            </a>
+            
+            <!-- course_controls -->
+            <div class="coursecontrols nav-item d-flex">
+                <div class="studentdash nav-item nav-link">
+        <a role="button" data-tooltip="tooltip" data-placement= "bottom" title="Dieser Kurs" data-toggle="modal" href="#studentdashslider" class="btn btn-secondary fhs-tooltip"><i class="fa fa-cogs" aria-hidden="true"></i></a>
+    </div>
+                
+            </div>
+    
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                <!-- jmu custom mycourses menu -->
+        <script>
+        $(window).on("load", function () {
+            $(document).on("click.bs.dropdown.data-api", ".dropdown.keep-open", function (e) { e.stopPropagation(); });
+            $("#jmu-mycourses-filter").on( "input", 
+                function() {
+                    var value = $("#jmu-mycourses-filter").val();
+                    $( "a.dropdown-item.jmu-accordion" ).each(function( index ) {
+                        if( $( this ).text().toLocaleLowerCase().indexOf( value.toLocaleLowerCase() ) < 0 ) { 
+                            $( this ).hide();
+                        }
+                        else {
+                            $( this ).show();    
+                            $( this ).parent(".jmu-mycourses-cat").collapse("show");
+                        }
+                    });
+                }
+             );
+         });
+        </script><div class="dropdown nav-item keep-open">
+                <a role="button" class="jmu-courses-dropdown btn btn-secondary fhs-tooltip dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                </a>
+            <a class="jmu-courses-dropdown dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://wuecampus2.uni-wuerzburg.de/moodle/my/index.php">Meine Kurse</a><div class="dropdown-menu jmu-mycourses keep-open"><input type="text" class="form-control" id="jmu-mycourses-filter" placeholder="Kurse filtern" autofocus><a class="dropdown-item" title="Dashboard" href="https://wuecampus2.uni-wuerzburg.de/moodle/my">Dashboard</a><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-87" aria-expanded="true">Wintersemester 18/19</a><div class="jmu-mycourses-cat collapse show" id="jmu-mycourses-cat-87"><a class="dropdown-item jmu-accordion" title="WS18_EAGLE_TB2" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=31213">WS18:Applications of Earth Observation (04-GEO-TB2)</a><a class="dropdown-item jmu-accordion" title="WS18_EAGLE_MB1" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=31335">WS18:Digital Image Analysis and GIS (04-GEO-MB1)</a><a class="dropdown-item jmu-accordion" title="WS18_EAGLE_MB2" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176">WS18:Introduction to Programming and Geostatistics (04-GEO-MB2)</a><a class="dropdown-item jmu-accordion" title="WS18_MFD" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=29944">WS18:Methoden der fernerkundlichen Datenauswertung (09-BFB1-1 / 04-Geo-MFD)</a><a class="dropdown-item jmu-accordion" title="WS18_Selected Topics Physical Geogr" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=29632">WS18:Selected Topics in Geography II (04-GEO-RE2)</a></div><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-88" aria-expanded="false">Sommersemester 18</a><div class="jmu-mycourses-cat collapse " id="jmu-mycourses-cat-88"><a class="dropdown-item jmu-accordion" title="SS18_FERN-A" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=26555">SS18:Anwendungen der Fernerkundung in der Geographie (09-FERN-2 / 04-Geo-FERNA)</a></div><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-89" aria-expanded="false">Wintersemester 17/18</a><div class="jmu-mycourses-cat collapse " id="jmu-mycourses-cat-89"><a class="dropdown-item jmu-accordion" title="WS17_Exo_Dynamik" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=24659">WS17:Allgemeine Physische Geographie I: Exogene Dynamik (09-PG1-1/04-Geo-PG1Ex, 09-GeoLA-AM-PG1/04-Geo-PG1Ex)</a><a class="dropdown-item jmu-accordion" title="WS17_FERN-E" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=23934">WS17:Einführung in die Geographische Fernerkundung (09-FERN-1 / 04-Geo-FERNE)</a><a class="dropdown-item jmu-accordion" title="WS17_InfoHaF" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=24424">WS17:Einführung in die Informatik für Hörer aller Fakultäten</a><a class="dropdown-item jmu-accordion" title="WS17_B2.2 Skills Workshop_010203" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=25186">WS17:Englisch B2.2 - Skills Workshop_Gruppe 01;02;03 - Gary Fitzgerald</a><a class="dropdown-item jmu-accordion" title="WS17_MFD" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=23933">WS17:Methoden der fernerkundlichen Datenauswertung (09-BFB1-1 / 04-Geo-MFD)</a></div><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-90" aria-expanded="false">Sommersemester 17</a><div class="jmu-mycourses-cat collapse " id="jmu-mycourses-cat-90"><a class="dropdown-item jmu-accordion" title="SS17_R" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=23260">SS17:Fernerkundliche Analysen mit dem openSource Programm `R`</a><a class="dropdown-item jmu-accordion" title="SS17_FIR" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=21522">SS17:Fernerkundung im Ressourcenmanagement (09-BFB1-2 / 04-Geo-FIR)</a></div><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-91" aria-expanded="false">Wintersemester 16/17</a><div class="jmu-mycourses-cat collapse " id="jmu-mycourses-cat-91"><a class="dropdown-item jmu-accordion" title="WS16_Exogene_Dynamik" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=18634">WS16:Allgemeine Physische Geographie I: Exogene Dynamik (09-PG1-1/04-Geo-PG1Ex, 09-GeoLA-AM-PG1/04-Geo-PG1Ex)</a><a class="dropdown-item jmu-accordion" title="WS16_WS16_Einführung_Klimasystem" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=20434">WS16:Allgemeine Physische Geographie II: Klimasystem (09-PG1-2; 09-GeoGH-AM-PG2-1/04-Geo-PG1Kl)</a><a class="dropdown-item jmu-accordion" title="WS16_Bev.- und Sozialgeographie" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=20339">WS16:Einführung in die Sozial- und Bevölkerungsgeographie (09-HG1-3, 09-HG1-SozGAF-1 / 04-Geo-HG1B / 09-HG1-SozGAF-1)</a><a class="dropdown-item jmu-accordion" title="WS16_BFB1-1 / MFD" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=19765">WS16:Methoden der fernerkundlichen Datenauswertung (09-BFB1-1 / 04-Geo-MFD)</a><a class="dropdown-item jmu-accordion" title="WS16_Europa_01" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=21028">WS16:Regionale Geographie Europa 1 / Regionale Geographie - Vorlesung 1 (09-RG-EU1-1; 09-GeoLA-VM-RG1-1; 09-RG-NF-1 / 04-Geo-RG-V1 / 09-RG-NF-1 )_Gruppe 01 - Sponholz</a><a class="dropdown-item jmu-accordion" title="WS16_WS16_Geohazards_02" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=20444">WS16:Spezielle Physische Geographie: System Erde - Mensch und Umwelt I (09-PG2-1, 09-GeoGy-VM-SPG-1 / 04-Geo-SPG1)_Gruppe 02 - </a></div><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-92" aria-expanded="false">Sommersemester 16</a><div class="jmu-mycourses-cat collapse " id="jmu-mycourses-cat-92"><a class="dropdown-item jmu-accordion" title="SS16_Endogene Dynamik" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=17703">SS16:Allgemeine Physische Geographie: Endogene Dynamik - Einführung in die Geologie (09-PG1-3, 09-GeoLA-AM-PG3 / 04-Geo-PG1En)</a><a class="dropdown-item jmu-accordion" title="SS16_FERN2" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=17637">SS16:Anwendungen der Fernerkundung in der Geographie (09-FERN-2 / 04-Geo-FERNA)</a><a class="dropdown-item jmu-accordion" title="SS16_EAP G4_04" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=18220">SS16:English for Academic Purposes (B2.2)_Gruppe 04 - Phelan</a><a class="dropdown-item jmu-accordion" title="SS16_Statistik 2" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=16107">SS16:Statistik 2: Spezielle und multivariate Verfahren (09-STAT-2 / 04-Geo-STATM)</a></div><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-93" aria-expanded="false">Wintersemester 15/16</a><div class="jmu-mycourses-cat collapse " id="jmu-mycourses-cat-93"><a class="dropdown-item jmu-accordion" title="WS15_Exogene Dynamik" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=13765">WS15:Allgemeine Physische Geographie I: Exogene Dynamik (09-PG1-1)</a><a class="dropdown-item jmu-accordion" title="WS15_FERN1" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=15587">WS15:Einführung in die Geographische Fernerkundung (09-FERN-1 / 04-Geo-FERNE)</a><a class="dropdown-item jmu-accordion" title="WS15_Siedlungsgeographie" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=15784">WS15:Einführung in die Siedlungsgeographie (09-HG1-1; 09-HG1-SGAF-1/04-Geo-HG1S / 09-HG1-SGAF-1)</a><a class="dropdown-item jmu-accordion" title="WS15_Statistik1" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=15595">WS15:Statistik I: Grundlagen der deskriptiven und schließenden Statistik (09-STAT-1/04-Geo-STATU / 09-STAT-SW-1)</a></div><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-103" aria-expanded="false">Verschiedenes</a><div class="jmu-mycourses-cat collapse " id="jmu-mycourses-cat-103"><a class="dropdown-item jmu-accordion" title="Was ist WueCampus" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=2086">Was ist WueCampus</a></div><a class="dropdown-item jmu-mycourses-toggle text-info" data-toggle="collapse" data-target="#jmu-mycourses-cat-102" aria-expanded="false">Semesterübergreifend</a><div class="jmu-mycourses-cat collapse " id="jmu-mycourses-cat-102"><a class="dropdown-item jmu-accordion" title="zfs_ctest_englisch" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=2153">Zentrum für Sprachen - Einstufungstest Englisch</a></div></div></div><!-- / jmu custom mycourses menu --><div class="dropdown nav-item">
+    <!-- JMU Button für mobile Ansicht -->
+    <a role="button" class="jmu-courses-dropdown btn btn-secondary fhs-tooltip dropdown-toggle nav-link" id="drop-down-5be9f7a3f226b5be9f7a3f03af2" data-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-clone" aria-hidden="true"></i>
+    </a>
+    <!-- / JMU Button für mobile Ansicht -->
+<a class="jmu-courses-dropdown dropdown-toggle nav-link" id="drop-down-5be9f7a3f226b5be9f7a3f03af2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+        Dieser Kurs
+    </a>
+    <div class="dropdown-menu" aria-labelledby="drop-down-5be9f7a3f226b5be9f7a3f03af2">
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176" title="Kursübersicht">Kursübersicht</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/calendar/view.php?view=month&amp;course=30176" title="Kalender">Kalender</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/user/index.php?id=30176" title="Teilnehmer/innen">Teilnehmer/innen</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/badges/view.php?type=2&amp;id=30176" title="Auszeichnungen">Auszeichnungen</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/admin/tool/lp/coursecompetencies.php?courseid=30176" title="Kompetenzen">Kompetenzen</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=0" title="Allgemeines">Allgemeines</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=4" title="22. Oktober - 28. Oktober">22. Oktober - 28. Oktober</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=5" title="29. Oktober - 4. November">29. Oktober - 4. November</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=6" title="5. November - 11. November">5. November - 11. November</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=7" title="12. November - 18. November">12. November - 18. November</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=8" title="19. November - 25. November">19. November - 25. November</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=9" title="26. November - 2. Dezember">26. November - 2. Dezember</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=10" title="3. Dezember - 9. Dezember">3. Dezember - 9. Dezember</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=11" title="10. Dezember - 16. Dezember">10. Dezember - 16. Dezember</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=12" title="17. Dezember - 23. Dezember">17. Dezember - 23. Dezember</a>
+    </div>
+</div>
+                <div class="dropdown nav-item">
+    <!-- JMU Button für mobile Ansicht -->
+    <a role="button" class="jmu-courses-dropdown btn btn-secondary fhs-tooltip dropdown-toggle nav-link" id="drop-down-5be9f7a3f29d25be9f7a3f03af5" data-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-clone" aria-hidden="true"></i>
+    </a>
+    <!-- / JMU Button für mobile Ansicht -->
+<a class="jmu-courses-dropdown dropdown-toggle nav-link" id="drop-down-5be9f7a3f29d25be9f7a3f03af5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+        Deutsch ‎(de)‎
+    </a>
+    <div class="dropdown-menu" aria-labelledby="drop-down-5be9f7a3f29d25be9f7a3f03af5">
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=ca" title="Català ‎(ca)‎">Català ‎(ca)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=de_du" title="Deutsch - Du ‎(de_du)‎">Deutsch - Du ‎(de_du)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=de" title="Deutsch ‎(de)‎">Deutsch ‎(de)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=es" title="Español - Internacional ‎(es)‎">Español - Internacional ‎(es)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=fr" title="Français ‎(fr)‎">Français ‎(fr)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=it" title="Italiano ‎(it)‎">Italiano ‎(it)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=pt" title="Português - Portugal ‎(pt)‎">Português - Portugal ‎(pt)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=sv" title="Svenska ‎(sv)‎">Svenska ‎(sv)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=tr" title="Türkçe ‎(tr)‎">Türkçe ‎(tr)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=ru" title="Русский ‎(ru)‎">Русский ‎(ru)‎</a>
+                <a class="dropdown-item" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=ar" title="عربي ‎(ar)‎">عربي ‎(ar)‎</a>
+    </div>
+</div>
+                <!-- page_heading_menu -->
+                
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <div class="d-none d-lg-block">
+                
+            </div>
+                <!-- navbar_plugin_output -->
+                <li class="nav-item">
+                <div class="popover-region collapsed popover-region-messages"
+    id="nav-message-popover-container" data-userid="73482"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link"
+        data-region="popover-region-toggle"
+        aria-role="button"
+        aria-controls="popover-region-container-5be9f7a3f2e195be9f7a3f03af6"
+        aria-haspopup="true"
+        aria-label="Mitteilungsfenster ohne neue Mitteilungen anzeigen"
+        tabindex="0">
+                <i class="icon fa fa-comment fa-fw " aria-hidden="true" title="Mitteilungen" aria-label="Mitteilungen"></i>
+        <div class="count-container hidden" data-region="count-container">0</div>
+
+    </div>
+    <div 
+        id="popover-region-container-5be9f7a3f2e195be9f7a3f03af6"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="Systemmitteilungen"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Mitteilungen</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <div class="newmessage-link">
+            <a href="https://wuecampus2.uni-wuerzburg.de/moodle/message/index.php?contactsfirst=1">Neue Mitteilung
+            </a>
+        </div>
+        <a class="mark-all-read-button"
+           href="#"
+           role="button"
+           title="Alle als gelesen markieren"
+           data-action="mark-all-read">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true" title="Alle als gelesen markieren" aria-label="Alle als gelesen markieren"></i></span>
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " aria-hidden="true" title="Wird geladen" aria-label="Wird geladen"></i></span>
+        </a>
+        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/message/edit.php?id=73482"
+           title="Mitteilungen">
+            <i class="icon fa fa-cog fa-fw " aria-hidden="true" title="Mitteilungen" aria-label="Mitteilungen"></i>
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="messages" data-region="messages" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" data-region="empty-message" tabindex="0">Keine Mitteilungen</div>
+
+            </div>
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " aria-hidden="true" title="Wird geladen" aria-label="Wird geladen"></i></span>
+        </div>
+                <a class="see-all-link"
+                    href="https://wuecampus2.uni-wuerzburg.de/moodle/message/index.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Alle anzeigen</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed popover-region-notifications"
+    id="nav-notification-popover-container" data-userid="73482"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link"
+        data-region="popover-region-toggle"
+        aria-role="button"
+        aria-controls="popover-region-container-5be9f7a3f3d8c5be9f7a3f03af7"
+        aria-haspopup="true"
+        aria-label="Mitteilungsfenster ohne neue Benachrichtigungen anzeigen"
+        tabindex="0">
+                <i class="icon fa fa-bell fa-fw " aria-hidden="true" title="Systemmitteilungen" aria-label="Systemmitteilungen"></i>
+        <div class="count-container hidden" data-region="count-container">0</div>
+
+    </div>
+    <div 
+        id="popover-region-container-5be9f7a3f3d8c5be9f7a3f03af7"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="Systemmitteilungen"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Systemmitteilungen</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button"
+           href="#"
+           title="Alle als gelesen markieren"
+           data-action="mark-all-read"
+           role="button">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true" title="Alle als gelesen markieren" aria-label="Alle als gelesen markieren"></i></span>
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " aria-hidden="true" title="Wird geladen" aria-label="Wird geladen"></i></span>
+        </a>
+        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/message/notificationpreferences.php?userid=73482"
+           title="Systemmitteilungen">
+            <i class="icon fa fa-cog fa-fw " aria-hidden="true" title="Systemmitteilungen" aria-label="Systemmitteilungen"></i>
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">Keine Systemmitteilungen</div>
+
+            </div>
+            <span class="loading-icon"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " aria-hidden="true" title="Wird geladen" aria-label="Wird geladen"></i></span>
+        </div>
+                <a class="see-all-link"
+                    href="https://wuecampus2.uni-wuerzburg.de/moodle/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Alle anzeigen</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="localnavbarplus nav-link"><a alt="Hilfe zu WueCampus" title="Hilfe zu WueCampus" href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/glossary/view.php?id=323671"></a></div>
+                </li>
+                <!-- user_menu -->
+                <li class="nav-item d-flex align-items-center">
+                    <div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-2" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar d-flex " id="action-menu-2-menubar" role="menubar">
+
+            
+
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a tabindex="0" class="btn  dropdown-toggle" id="dropdown-2" aria-label="Nutzermenü" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-2-menu">
+                            
+                            <span class="userbutton"><span class="usertext mr-1">Jakob Rieser</span><span class="avatars"><span class="avatar current"><img src="https://wuecampus2.uni-wuerzburg.de/moodle/theme/image.php/fordson/core/1540830881/u/f2" alt="Nutzerbild Jakob Rieser" title="Nutzerbild Jakob Rieser" class="userpicture defaultuserpic" width="35" height="35" role="presentation" /></span></span></span>
+                                
+                            <b class="caret"></b>
+                        </a>
+                            <div class="dropdown-menu dropdown-menu-right menu  align-tr-br" id="action-menu-2-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-2" role="menu" data-align="tr-br" id="dropdown-menu-2">
+                                        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/my/" class="dropdown-item menu-action" role="menuitem" data-title="mymoodle,admin" aria-labelledby="actionmenuaction-1">
+                                                <i class="icon fa fa-tachometer fa-fw " aria-hidden="true" title="Dashboard" aria-label="Dashboard"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-1">
+                                                Dashboard
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/user/profile.php?id=73482" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" aria-labelledby="actionmenuaction-2">
+                                                <i class="icon fa fa-user fa-fw " aria-hidden="true" title="Profil" aria-label="Profil"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-2">
+                                                Profil
+                                            </span>
+                                        </a>
+                                        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/grade/report/overview/index.php" class="dropdown-item menu-action" role="menuitem" data-title="grades,grades" aria-labelledby="actionmenuaction-3">
+                                                <i class="icon fa fa-table fa-fw " aria-hidden="true" title="Bewertungen" aria-label="Bewertungen"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-3">
+                                                Bewertungen
+                                            </span>
+                                        </a>
+                                        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/message/index.php" class="dropdown-item menu-action" role="menuitem" data-title="messages,message" aria-labelledby="actionmenuaction-4">
+                                                <i class="icon fa fa-comment fa-fw " aria-hidden="true" title="Mitteilungen" aria-label="Mitteilungen"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-4">
+                                                Mitteilungen
+                                            </span>
+                                        </a>
+                                        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" aria-labelledby="actionmenuaction-5">
+                                                <i class="icon fa fa-wrench fa-fw " aria-hidden="true" title="Einstellungen" aria-label="Einstellungen"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-5">
+                                                Einstellungen
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/login/logout.php?sesskey=6BAFDSLHB4" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" aria-labelledby="actionmenuaction-6">
+                                                <i class="icon fa fa-sign-out fa-fw " aria-hidden="true" title="Logout" aria-label="Logout"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-6">
+                                                Logout
+                                            </span>
+                                        </a>
+                            </div>
+                    </div>
+                </div>
+
+        </div>
+
+</div></div>
+                </li>
+            </ul>
+            <!-- search_box -->
+    </nav>
+    
+
+        <div class="headerbkg"><div class="customimage" style="background-image: url(&quot;https://wuecampus2.uni-wuerzburg.de/moodle/uniwue/pix/philosophie.jpg&quot;); background-size: cover; background-position:center;
+                width: 100%; height: 100%;"></div></div>
+
+    <div id="page" class="container-fluid">
+        
+        <div id="learningcontent">
+        
+            <div class="modal fade" id="studentdashslider" tabindex="-1" role="dialog" aria-labelledby="teacherdashslider" aria-hidden="true">
+<div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+    <div class="modal-body">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        <div class="studentdashboard">
+        <div class="container-fluid">
+        
+            <div class="row">
+
+
+                    <div class="col-md-2 studentgradebook">
+                        <p>Meine Bewertungen</p><a href="https://wuecampus2.uni-wuerzburg.de/moodle/grade/report/user/index.php?id=30176" alt="Meine Bewertungen"><i class="fa fa-5x fa-bar-chart"></i></a>
+                    </div>
+
+                    <!--uniwue Studenten schneller ein-/ausschreiben -->
+                      
+                    <!--uniwue ende -->
+
+                     
+                    <div class="col-md-2 studentadministration">
+                        <p>Kurs-Administration</p><a href="https://wuecampus2.uni-wuerzburg.de/moodle/course/admin.php?courseid=30176" alt="Kurs-Administration"><i class="fa fa-5x fa-cog"></i></a>
+                    </div>
+                     
+                </div>
+
+            <div class="row">
+                    <div class="col-md-4 coursesummary">
+                        <div class="dashtitle mt-3 mb-2 p-2 bg-info rounded">
+                            <h3><i class="fa fa-map">&nbsp</i>Kursbeschreibung</h3>
+                        </div>
+                            <div class="card-block">
+                                    <div class="text_to_html">Beschreiben Sie kurz und prägnant, worum es in diesem Kurs geht.</div>
+                            </div>
+                    </div>
+
+                    <div class="col-md-5 coursestafflisting">
+                        <div class="dashtitle mt-3 mb-2 p-2 bg-info rounded">
+                            <h3><i class="fa fa-users">&nbsp</i>Lehrender</h3>
+                        </div>
+                            <div class="list-group">
+                                <div class="list-group-item">
+                                    <div class="staffmember">
+                                        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/user/view.php?id=32242&amp;course=30176"><img src="https://wuecampus2.uni-wuerzburg.de/moodle/theme/image.php/fordson/core/1540830881/u/f1" alt="Nutzerbild Martin Wegmann" title="Nutzerbild Martin Wegmann" class="userpicture defaultuserpic" width="50" height="50" /></a>
+                                        <div class="staffinfo">
+                                            <h4>Martin Wegmann </h4>
+                                            <p> <br /> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 activitylinks">
+                        <div class="dashtitle mt-3 mb-2 p-2 bg-info rounded">
+                            <h3><i class="fa fa-check-square-o dashicon"></i>Aktivitäten</h3>     
+                        </div>
+                        <div class="list-group">
+                            <div class="list-group" aria-labelledby="list-group-5be9f7a4038b35be9f7a3f03af16">
+        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/course/resources.php?id=30176"class="list-group-item" >Arbeitsmaterial</a>
+        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/assign/index.php?id=30176"class="list-group-item" >Aufgaben</a>
+        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/forum/index.php?id=30176"class="list-group-item" >Foren</a>
+        <a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/publication/index.php?id=30176"class="list-group-item" >Studierendenordner</a>
+ </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+</div>
+</div>
+
+<div style="clear:both;"></div>
+            <header id="page-header" class="row">
+    <div class="col-12 pt-3 pb-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="mr-auto">
+                    <a href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176"><div class="page-context-header"><div class="page-header-headings"><h1>WS18:Introduction to Programming and Geostatistics (04-GEO-MB2)</h1></div></div></a>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div id="page-navbar">
+                        <nav role="navigation">
+    <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="https://wuecampus2.uni-wuerzburg.de/moodle/" >Startseite</a></li>
+                <li class="breadcrumb-item">Meine Kurse</li>
+                <li class="breadcrumb-item"><a href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176" title="WS18:Introduction to Programming and Geostatistics (04-GEO-MB2)">WS18_EAGLE_MB2</a></li>
+                <li class="breadcrumb-item"><a href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176&amp;section=6" >5. November - 11. November</a></li>
+                <li class="breadcrumb-item"><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893" title="Datei">day4 main</a></li>
+    </ul>
+</nav>
+                    </div>
+                    <div class="ml-auto d-flex">
+                        
+                    </div>
+                    <div id="course-header">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+            
+            <div id="page-content" class="row">
+                <div id="region-main-box" class="col-12">
+                    <section id="region-main" >
+                        <div class="card">
+                            <div class="card-body">
+                                <span class="notifications" id="user-notifications"></span>
+                                <div role="main"><span id="maincontent"></span><h2>day4 main</h2><div class="resourceworkaround">Klicken Sie auf den Link '<a href="https://wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1536941/mod_resource/content/0/day4_main.pdf" onclick="window.open('https://wuecampus2.uni-wuerzburg.de/moodle/pluginfile.php/1536941/mod_resource/content/0/day4_main.pdf', '', 'width=800,height=800,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">day4_main.pdf</a>', um die Datei anzuzeigen</div></div>
+                                
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+                <div class="m-t-2 m-b-1">
+<div class="row">
+    <div class="col-md-4">        <div class="pull-left">
+                <a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1020032&forceview=1" id="prev-activity-link" class="btn btn-link"  title="day3 main" >&#x25C4; day3 main</a>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="mdl-align">
+            <div class="urlselect">
+    <form method="post" action="https://wuecampus2.uni-wuerzburg.de/moodle/course/jumpto.php" class="form-inline" id="url_select_f5be9f7a3f03af17">
+        <input type="hidden" name="sesskey" value="6BAFDSLHB4">
+            <label for="jump-to-activity" class="sr-only">
+                Direkt zu:
+            </label>
+        <select id="jump-to-activity"  id="jump-to-activity" class="custom-select urlselect" name="jump">
+                    <option value="" selected>Direkt zu:</option>
+                    <option value="/mod/forum/view.php?id=985979&amp;forceview=1" >announcements</option>
+                    <option value="/mod/publication/view.php?id=985980&amp;forceview=1" >project upload</option>
+                    <option value="/mod/assign/view.php?id=985982&amp;forceview=1" >tasks</option>
+                    <option value="/mod/resource/view.php?id=1013093&amp;forceview=1" >day1 main</option>
+                    <option value="/mod/resource/view.php?id=985985&amp;forceview=1" >Rocchini 2012</option>
+                    <option value="/mod/resource/view.php?id=1015542&amp;forceview=1" >day2 main</option>
+                    <option value="/mod/resource/view.php?id=1020032&amp;forceview=1" >day3 main</option>
+        </select>
+            <noscript>
+                <input type="submit" class="btn btn-secondary" value="Start">
+            </noscript>
+    </form>
+</div>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="pull-right">
+            
+        </div>
+</div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
+
+<a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="Zurück zum Anfang"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+
+<footer id="page-footer" class="py-3 text-light">
+    <div class="container">
+
+        <div id="course-footer"></div>
+
+        <div class="row">
+
+                <div class="col-md-8">
+                    
+
+                    <div class="logininfo">Sie sind angemeldet als <a href="https://wuecampus2.uni-wuerzburg.de/moodle/user/profile.php?id=73482" title="Profil anzeigen">Jakob Rieser</a> (<a href="https://wuecampus2.uni-wuerzburg.de/moodle/login/logout.php?sesskey=6BAFDSLHB4">Logout</a>)</div>
+
+                    <div class="homelink"><a href="https://wuecampus2.uni-wuerzburg.de/moodle/course/view.php?id=30176">WS18_EAGLE_MB2</a></div>
+
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="brandbox">
+
+                        <h3>Universität Würzburg</h3>
+                            <ul class="footercontact">
+                                <li><i class="fa fa-globe"></i>  www.uni-wuerzburg.de</li>
+                                
+                                
+                            </ul>
+
+                        
+
+                    </div>
+                </div>
+
+        </div>
+        <nav class="nav navbar-nav d-md-none">
+                <ul class="list-unstyled pt-3">
+                                    <li><a href="#" title="Sprache">Deutsch ‎(de)‎</a></li>
+                                <li>
+                                    <ul class="list-unstyled ml-3">
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=ca" title="Català ‎(ca)‎">Català ‎(ca)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=de_du" title="Deutsch - Du ‎(de_du)‎">Deutsch - Du ‎(de_du)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=de" title="Deutsch ‎(de)‎">Deutsch ‎(de)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=es" title="Español - Internacional ‎(es)‎">Español - Internacional ‎(es)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=fr" title="Français ‎(fr)‎">Français ‎(fr)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=it" title="Italiano ‎(it)‎">Italiano ‎(it)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=pt" title="Português - Portugal ‎(pt)‎">Português - Portugal ‎(pt)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=sv" title="Svenska ‎(sv)‎">Svenska ‎(sv)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=tr" title="Türkçe ‎(tr)‎">Türkçe ‎(tr)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=ru" title="Русский ‎(ru)‎">Русский ‎(ru)‎</a></li>
+                                                        <li><a href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&amp;lang=ar" title="عربي ‎(ar)‎">عربي ‎(ar)‎</a></li>
+                                    </ul>
+                                </li>
+                </ul>
+        </nav>
+        <div class="summaryfooter"><a href="https://wuecampus2.uni-wuerzburg.de/moodle/admin/tool/dataprivacy/summary.php">Unsere Datenlöschfristen</a></div><a href="https://download.moodle.org/mobile?version=2018051702.11&amp;lang=de&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">Laden Sie die mobile App</a>
+        
+<div style="text-align: center;"><a
+ href="https://wuecampus2.uni-wuerzburg.de/moodle/mod/page/view.php?id=931517&forceview=1">Impressum
++ Datenschutzerklärung</a></div><script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://wuecampus2.uni-wuerzburg.de/moodle/lib/requirejs.php/1540652057/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/lib/jquery/jquery-3.2.1.min',
+        jqueryui: 'https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/lib/requirejs/require.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://wuecampus2.uni-wuerzburg.de/moodle/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("de",{
+ "Play": "Wiedergabe",
+ "Pause": "Pause",
+ "Replay": "Erneut abspielen",
+ "Current Time": "Aktueller Zeitpunkt",
+ "Duration Time": "Dauer",
+ "Remaining Time": "Verbleibende Zeit",
+ "Stream Type": "Streamtyp",
+ "LIVE": "LIVE",
+ "Loaded": "Geladen",
+ "Progress": "Status",
+ "Fullscreen": "Vollbild",
+ "Non-Fullscreen": "Kein Vollbild",
+ "Mute": "Ton aus",
+ "Unmute": "Ton ein",
+ "Playback Rate": "Wiedergabegeschwindigkeit",
+ "Subtitles": "Untertitel",
+ "subtitles off": "Untertitel aus",
+ "Captions": "Untertitel",
+ "captions off": "Untertitel aus",
+ "Chapters": "Kapitel",
+ "You aborted the media playback": "Sie haben die Videowiedergabe abgebrochen.",
+ "A network error caused the media download to fail part-way.": "Der Videodownload ist aufgrund eines Netzwerkfehlers fehlgeschlagen.",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "Das Video konnte nicht geladen werden, da entweder ein Server- oder Netzwerkfehler auftrat oder das Format nicht unterstützt wird.",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "Die Videowiedergabe wurde entweder wegen eines Problems mit einem beschädigten Video oder wegen verwendeten Funktionen, die vom Browser nicht unterstützt werden, abgebrochen.",
+ "No compatible source was found for this media.": "Für dieses Video wurde keine kompatible Quelle gefunden.",
+ "Play Video": "Video abspielen",
+ "Close": "Schließen",
+ "Modal Window": "Modales Fenster",
+ "This is a modal window": "Dies ist ein modales Fenster",
+ "This modal can be closed by pressing the Escape key or activating the close button.": "Durch Drücken der Esc-Taste bzw. Betätigung der Schaltfläche \"Schließen\" wird dieses modale Fenster geschlossen.",
+ ", opens captions settings dialog": ", öffnet Einstellungen für Untertitel",
+ ", opens subtitles settings dialog": ", öffnet Einstellungen für Untertitel",
+ ", selected": ", ausgewählt",
+ "captions settings": "Untertiteleinstellungen",
+ "subtitles settings": "Untertiteleinstellungen",
+ "descriptions settings": "Einstellungen für Beschreibungen",
+ "Close Modal Dialog": "Modales Fenster schließen",
+ "Descriptions": "Beschreibungen",
+ "descriptions off": "Beschreibungen aus",
+ "The media is encrypted and we do not have the keys to decrypt it.": "Die Entschlüsselungsschlüssel für den verschlüsselten Medieninhalt sind nicht verfügbar.",
+ ", opens descriptions settings dialog": ", öffnet Einstellungen für Beschreibungen",
+ "Audio Track": "Tonspur",
+ "Text": "Schrift",
+ "White": "Weiß",
+ "Black": "Schwarz",
+ "Red": "Rot",
+ "Green": "Grün",
+ "Blue": "Blau",
+ "Yellow": "Gelb",
+ "Magenta": "Magenta",
+ "Cyan": "Türkis",
+ "Background": "Hintergrund",
+ "Window": "Fenster",
+ "Transparent": "Durchsichtig",
+ "Semi-Transparent": "Halbdurchsichtig",
+ "Opaque": "Undurchsictig",
+ "Font Size": "Schriftgröße",
+ "Text Edge Style": "Textkantenstil",
+ "None": "Kein",
+ "Raised": "Erhoben",
+ "Depressed": "Gedrückt",
+ "Uniform": "Uniform",
+ "Dropshadow": "Schlagschatten",
+ "Font Family": "Schristfamilie",
+ "Proportional Sans-Serif": "Proportionale Sans-Serif",
+ "Monospace Sans-Serif": "Monospace Sans-Serif",
+ "Proportional Serif": "Proportionale Serif",
+ "Monospace Serif": "Monospace Serif",
+ "Casual": "Zwanglos",
+ "Script": "Schreibeschrift",
+ "Small Caps": "Small-Caps",
+ "Reset": "Zurücksetzen",
+ "restore all settings to the default values": "Alle Einstellungen auf die Standardwerte zurücksetzen",
+ "Done": "Fertig",
+ "Caption Settings Dialog": "Einstellungsdialog für Untertitel",
+ "Beginning of dialog window. Escape will cancel and close the window.": "Anfang des Dialogfensters. Esc bricht ab und schließt das Fenster.",
+ "End of dialog window.": "Ende des Dialogfensters.",
+ "Audio Player": "Audio-Player",
+ "Video Player": "Video-Player",
+ "Progress Bar": "Forschrittsbalken",
+ "progress bar timing: currentTime={1} duration={2}": "{1} von {2}",
+ "Volume Level": "Lautstärkestufe"
+});
+
+    });
+});;
+function legacy_activity_onclick_handler_1(e) { e.halt(); window.open('https://wuecampus2.uni-wuerzburg.de/moodle/mod/resource/view.php?id=1021893&redirect=1', '', 'width=800,height=800,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+
+require(['jquery'], function($) {
+    $('#single_select5be9f7a3f03af4').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5be9f7a3f03af3').submit();
+        }
+    });
+});
+;
+
+require(['jquery', 'message_popup/message_popover_controller'], function($, controller) {
+    var container = $('#nav-message-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+        require(['jquery'], function($) {
+            $('#jump-to-activity').change(function() {
+                $('#url_select_f5be9f7a3f03af17').submit();
+            });
+        });
+    ;
+
+require(['jquery'], function($) {
+    $('#single_select5be9f7a3f03af19').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5be9f7a3f03af18').submit();
+        }
+    });
+});
+;
+
+require(['theme_boost/loader']);
+require(['jquery','theme_boost/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
+;
+require(["core/notification"], function(amd) { amd.init(1536941, []); });;
+require(["core/log"], function(amd) { amd.setConfig({"level":"warn"}); });
+});
+//]]>
+</script>
+<script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/theme/fordson/javascript/scrolltotop.js"></script>
+<script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/theme/fordson/javascript/scrollspy.js"></script>
+<script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/theme/fordson/javascript/tooltipfix.js"></script>
+<script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/theme/fordson/javascript/blockslider.js"></script>
+<script type="text/javascript" src="https://wuecampus2.uni-wuerzburg.de/moodle/lib/javascript.php/1540652057/theme/fordson/javascript/courseblock.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Zuletzt ge\u00e4ndert","name":"Name","error":"Fehler","info":"Informationen","yes":"Ja","no":"Nein","ok":"OK","cancel":"Abbrechen","confirm":"Best\u00e4tigen","areyousure":"Sind Sie sicher?","closebuttontitle":"Schlie\u00dfen","unknownerror":"Unbekannter Fehler"},"repository":{"type":"Typ","size":"Gr\u00f6\u00dfe","invalidjson":"Ung\u00fcltiger JSON-Text","nofilesattached":"Keine Datei","filepicker":"Dateiauswahl","logout":"Abmelden","nofilesavailable":"Keine Dateien vorhanden","norepositoriesavailable":"Keine Ihrer aktuellen Repositories kann Dateien im n\u00f6tigen Format liefern","fileexistsdialogheader":"Datei bereits vorhanden","fileexistsdialog_editor":"Eine Datei mit diesem Namen wurde bereits an den Text angeh\u00e4ngt, den Sie gerade bearbeiten","fileexistsdialog_filemanager":"Eine Datei mit diesem Namen wurde bereits an den Text angeh\u00e4ngt","renameto":"Nach '{$a}' umbenennen","referencesexist":"{$a} Aliase\/Verkn\u00fcpfungen zu dieser Datei","select":"W\u00e4hlen Sie"},"admin":{"confirmdeletecomments":"M\u00f6chten Sie die Kommentare wirklich l\u00f6schen?","confirmation":"Best\u00e4tigung"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"de"});
+});
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random5be9f7a3f03af20'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5be9f7a3f03af20'); });
+})();
+//]]>
+</script>
+
+
+    </div>
+
+</footer>
+
+</body>
+</html>
