@@ -14,3 +14,6 @@ skrrrahh(60)
 skrrrahh(50)
 skrrrahh(51)
 skrrrahh(25)
+
+x <- 7
+if(x<8){skrrrahh(30)}
