@@ -42,7 +42,7 @@ ggplot(lsat.df)+
 plotRGB(lsat, 3,2,1)
 
 ##strech
-plotRGB(lsat, 5,3,2, stretch="lin")
+plotRGB(lsat, 3,2,1, stretch="lin")
 
 
 install.packages("tibble")
@@ -51,6 +51,6 @@ library(RStoolbox)
 ##single layer greyscale
 
 ##single layer map to user defined legend
-ggR(lsat, layer=1, stretch="lin", geom_raster=TRUE)+
-  scale_fill_gradient(low="blue", high="green")
+ggR(lsat, layer=4, stretch="lin", geom_raster=TRUE)+
+  scale_fill_gradient(low="black", high="red")
 
