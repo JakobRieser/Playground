@@ -11,3 +11,12 @@ m.mean <- for(i in 1:ncol(m)){
   m.mean[i] <- mean(m[,1])
 }
 
+#or:
+apply(m,1,mean)
+apply(m,2,mean)
+
+
+apply(m,2,function(x) length(x[x<0]))
+
+
+
