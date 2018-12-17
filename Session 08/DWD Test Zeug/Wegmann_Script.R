@@ -1,4 +1,4 @@
-setwd("C:/Users/Jakob/OneDrive/EAGLE M.Sc/1st term/Introduction to Programming and Geostatistics/Playground/Session 08/DWD Test Zeug")
+setwd("D:/Programme/OneDrive/EAGLE M.Sc/1st term/Introduction to Programming and Geostatistics/Playground/Session 08/DWD Test Zeug")
 getwd()
 # ###########
 # download and display temperature and precipitation for Germany
@@ -39,10 +39,12 @@ http <- "ftp://ftp-cdc.dwd.de/pub/CDC/grids_germany/monthly/air_temperature_mean
 
 # List resulting datasets of given url
 # activate library to fetch url infos
+install.packages("RCurl")
 library(RCurl)
 result <- getURL(http, verbose=TRUE, ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
 # Split string into pieces by identifying certain pattern that seperates the individual filenames
+install.packages("tidyverse")
 library(tidyverse)
 
 result_tidy <- str_split(result, "\n|\r\n")  # sometimes \r needed
@@ -148,8 +150,10 @@ rasterComp <- rasterComp/10
 
 # Calculate mean temperature between 1961 and 1990
 rasterHist_mean <- mean(rasterHist)
-
+install.packages("RStoolbox")
 library(RStoolbox)
+
+install.packages("gridExtra")
 library(gridExtra)
 
 maxVal <- max(c(unique(values(rasterComp)),unique(values(rasterHist_mean))),na.rm=T)
