@@ -258,7 +258,7 @@ names(my_df) <- c("Year", "Mean_Temp")
 for (i in 1:length(my_years)){
   current_layer <- my_raster[[i]]
   current_mean <- mean(current_layer@data@values, na.rm=T)
-  my_df[i,2] <- current_mean/10
+  my_df[i,2] <- current_mean/10 #divide by 10 is already done!!!
   rm(current_layer, current_mean, i)
 }
 
