@@ -1,5 +1,6 @@
 ###UNSUPERVISED CLASSIFICATION:
-
+library(devtools)
+library(raster)
 library(RStoolbox)
 library(rgdal)
 
@@ -10,6 +11,11 @@ plot(UC$map)
 
 
 ###SUPERVISED CLASSIFICATION:
-timescan <- brick("F:/W18_04GeoMB1_01_CH/03_Data/Steigerwald/03_raster/01_landsat/02_timescan/TimeScan_EAGLE_AOI_UTM_WGS84.tif")
+timescan <- brick("D:/Daten/Downloads/TimeScan_EAGLE_AOI_UTM_WGS84.tif")
+timescan
 
-superClass()
+td <- rgdal::readOGR("K:/W18_04GeoMB1_01_CH/03_Data/Steigerwald/02_vector/01_landcover/corine/CLC_2012/clc_12.shp")
+sc <- superClass(timescan, trainData = td, responseCol = "code_12", filename = "myClassification.tif")
+
+
+plot(sc$map)
