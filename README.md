@@ -1,1 +1,1 @@
-# Introduction to Probramming and Geostatistics
+# Introduction to Programming and Geostatistics
